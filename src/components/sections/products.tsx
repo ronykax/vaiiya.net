@@ -6,6 +6,7 @@ export default function Products() {
         name: string;
         description: string;
         image: string;
+        small?: boolean;
     }
 
     const products: Product[] = [
@@ -19,16 +20,18 @@ export default function Products() {
             description: "Suppress third-party influences and eccentricity.",
             image: "/VAIIYA_Series_9800.png",
         },
-        // {
-        //     name: "Series 2000",
-        //     description: "Suppress third-party influences and eccentricity.",
-        //     image: "/1920px-VAIIYA_Series_2000.png",
-        // },
-        // {
-        //     name: "Series 2000",
-        //     description: "Suppress third-party influences and eccentricity.",
-        //     image: "/1920px-VAIIYA_Series_2000.png",
-        // },
+        {
+            name: "Series 2000",
+            description: "Suppress third-party influences and eccentricity.",
+            image: "/1920px-VAIIYA_Series_2000.png",
+            small: true,
+        },
+        {
+            name: "Series 2000",
+            description: "Suppress third-party influences and eccentricity.",
+            image: "/1920px-VAIIYA_Series_2000.png",
+            small: true,
+        },
     ];
 
     return (
@@ -49,15 +52,28 @@ export default function Products() {
                 <div className="grid gap-6">
                     {products.map((item, index) => (
                         <div
-                            className="grid drop-shadow-2xl border border-black/50"
+                            className={cn(
+                                "grid drop-shadow-2xl border border-black/50 w-full",
+                                !item.small ? "col-span-2" : ""
+                            )}
                             key={index}
                         >
-                            <Image
-                                width={2560}
-                                height={1249}
-                                alt={item.name}
-                                src={item.image}
-                            />
+                            {item.small ? (
+                                <Image
+                                    width={512}
+                                    height={512}
+                                    alt={item.name}
+                                    src={item.image}
+                                    className="aspect-square object-cover"
+                                />
+                            ) : (
+                                <Image
+                                    width={2560}
+                                    height={1249}
+                                    alt={item.name}
+                                    src={item.image}
+                                />
+                            )}
 
                             <div className="p-6 grid gap-2 bg-black text-white">
                                 <span className="font-display font-bold text-2xl">

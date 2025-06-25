@@ -1,16 +1,17 @@
 "use client";
 
-import ReactPlayer from "react-player";
 import { Boxes } from "../ui/background-boxes";
 import { Button } from "../ui/button";
+import Box from "../box";
 
 export default function Hero() {
     return (
-        <div className="max-w-7xl mx-auto px-8 py-24 relative overflow-hidden border-b border-b-black/25 border-dashed">
+        <div className="max-w-7xl mx-auto px-8 py-24 relative overflow-hidden border-dashed">
             <Boxes />
+            <Box className="bottom-0 right-0" />
             <div className="scheme-dark font-body z-20 relative pointer-events-none">
                 <div className="grid gap-6">
-                    <span className="text-5xl font-display font-bold">
+                    <span className="text-5xl font-display font-extrabold tracking-tight">
                         We. As One.
                     </span>
 

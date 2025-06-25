@@ -1,10 +1,12 @@
 import Image from "next/image";
+import Box from "../box";
 
 export default function About() {
     return (
-        <section className="bg-black text-white max-w-7xl px-8 py-16">
+        <section className="bg-black text-white max-w-7xl px-8 py-16 relative">
+            <Box className="top-0 right-8" color="gray" />
             <div className="grid gap-6">
-                <span className="font-display font-bold text-3xl">About</span>
+                <span className="text-3xl font-display font-extrabold tracking-tight">Philosophy</span>
                 <span className="leading-relaxed opacity-75">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Reiciendis nulla nihil vitae sed! Quidem sapiente numquam
@@ -13,7 +15,7 @@ export default function About() {
                 </span>
 
                 <Image
-                className="mt-8"
+                    className="mt-8"
                     width={750}
                     height={750}
                     src={"/Sal-Scoria-Headshot.png"}
