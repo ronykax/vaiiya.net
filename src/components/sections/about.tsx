@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
     return (
         <section className="bg-black text-white max-w-7xl px-8 py-16">
@@ -9,6 +11,14 @@ export default function About() {
                     perspiciatis molestias eaque illum eius laborum laudantium
                     porro impedit, rerum libero repellendus, in doloribus!
                 </span>
+
+                <Image
+                className="mt-8"
+                    width={750}
+                    height={750}
+                    src={"/Sal-Scoria-Headshot.png"}
+                    alt="Sal Scoria"
+                />
             </div>
         </section>
     );
