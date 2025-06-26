@@ -45,15 +45,11 @@ export default function Products() {
                 )}
             />
             <div className="grid gap-6">
-                {/* <span className="font-display font-bold text-3xl text-center">
-                    Products
-                </span> */}
-
                 <div className="grid gap-6">
                     {products.map((item, index) => (
                         <div
                             className={cn(
-                                "grid drop-shadow-2xl border border-black/50 w-full",
+                                "grid drop-shadow-2xl border-0 border-black w-full [box-shadow:-4px_4px_0_rgba(0,0,0,0.25)]",
                                 !item.small ? "col-span-2" : ""
                             )}
                             key={index}
